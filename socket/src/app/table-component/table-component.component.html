@@ -1,0 +1,22 @@
+<mat-table [dataSource]="employees">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let employee">{{ employee.id }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+    <mat-cell *matCellDef="let employee">{{ employee.name }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+    <mat-cell *matCellDef="let employee">{{ employee.email }}</mat-cell>
+  </ng-container>
+
+  <mat-header-row
+    class="primary-header"
+    *matHeaderRowDef="['id', 'name', 'email']"
+  ></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['id', 'name', 'email']"></mat-row>
+</mat-table>
